@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title%}{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./static/images/icons/favicon.ico"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/vendor/animate/animate.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/vendor/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/vendor/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./static/css/util.css" />
+    <link rel="stylesheet" type="text/css" href="./static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom"
+      style="background-color: #00152d !important"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mt-2 mt-lg-0 ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white hover-link"
+              style="font-size: large"
+              href="/dashboard"
+              >Dashboard</a
+            >
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="font-size: large"
+            >
+              {{session['Email']}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item hover-link" href="/profile"
+                >Profile Setting</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item hover-link" href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="mt-2">{% block content %} {% endblock %}</div>
+    </div>
+  </body>
+  {%block Script%} {%endblock%}
+  <!--===============================================================================================-->
+  <script src="./static/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="./static/vendor/animsition/js/animsition.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="./static/vendor/bootstrap/js/popper.js"></script>
+  <script src="./static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="./static/vendor/select2/select2.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="./static/vendor/daterangepicker/moment.min.js"></script>
+  <script src="./static/vendor/daterangepicker/daterangepicker.js"></script>
+  <!--===============================================================================================-->
+  <script src="./static/vendor/countdowntime/countdowntime.js"></script>
+  <!--===============================================================================================-->
+  <script src="./static/js/main.js"></script>
+</html>

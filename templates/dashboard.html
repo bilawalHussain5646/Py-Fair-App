@@ -1,0 +1,500 @@
+{% extends "default_user.html" %} {%block title%} Dashboard {% endblock %}
+{%block content%}
+
+<form action="/model-2" method="POST" class="Manual-entry">
+  <div class="form-row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %}
+        <div
+          class="alert alert-{{ category }} alert-dismissible fade show"
+          role="alert"
+        >
+          <span>{{ message }}</span>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+        <label for="simulation"
+          ><strong>Enter value of n_simulation </strong></label
+        >
+
+        <input
+          type="number"
+          class="form-control"
+          id="simulation"
+          name="simulation"
+          placeholder="Enter Number"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h2 class="text-center mt-3"><strong>Model 1</strong></h2>
+    <div class="table-responsive">
+      <table class="table table-bordered w-200 mt-5">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  value="Fields"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  value="Gamma"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="LOW"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="MODE"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="HIGH"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="CONSTANT"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="MEAN"
+                  readonly
+                />
+              </div>
+            </th>
+            <th scope="col">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="STDEV"
+                  readonly
+                />
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td scope="row">
+              <div class="form-group">
+                <select class="form-control p-0" name="field1" required>
+                  <option value="Loss Event Frequency">
+                    Loss Event Frequency
+                  </option>
+                  <option value="Threat Event Frequency">
+                    Threat Event Frequency
+                  </option>
+                  <option value="Contact Frequency">Contact Frequency</option>
+                  <option value="Probability of Action">
+                    Probability of Action
+                  </option>
+                  <option value="Vulnerability">Vulnerability</option>
+                  <option value="Control Strength">Control Strength</option>
+                  <option value="Threat Capability">Threat Capability</option>
+                  <option value="Loss Magnitude">Loss Magnitude</option>
+                  <option value="Primary Loss">Primary Loss</option>
+                  <option value="Secondary Loss">Secondary Loss</option>
+                  <option value="Secondary Loss Event Frequency">
+                    Secondary Loss Event Frequency
+                  </option>
+                  <option value="Secondary Loss Event Magnitude">
+                    Secondary Loss Event Magnitude
+                  </option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Gamma"
+                  name="gamma1"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Low"
+                  name="low1"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Mode"
+                  name="mode1"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="High"
+                  name="high1"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Constant"
+                  name="constant1"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Mean"
+                  name="mean1"
+                  step="0.01"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Standard Dev"
+                  name="std1"
+                  step="0.01"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row">
+              <div class="form-group">
+                <select class="form-control p-0" name="field2" required>
+                  <option value="Loss Event Frequency">
+                    Loss Event Frequency
+                  </option>
+                  <option value="Threat Event Frequency">
+                    Threat Event Frequency
+                  </option>
+                  <option value="Contact Frequency">Contact Frequency</option>
+                  <option value="Probability of Action">
+                    Probability of Action
+                  </option>
+                  <option value="Vulnerability">Vulnerability</option>
+                  <option value="Control Strength">Control Strength</option>
+                  <option value="Threat Capability">Threat Capability</option>
+                  <option value="Loss Magnitude">Loss Magnitude</option>
+                  <option value="Primary Loss">Primary Loss</option>
+                  <option value="Secondary Loss">Secondary Loss</option>
+                  <option value="Secondary Loss Event Frequency">
+                    Secondary Loss Event Frequency
+                  </option>
+                  <option value="Secondary Loss Event Magnitude">
+                    Secondary Loss Event Magnitude
+                  </option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Gamma"
+                  name="gamma2"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Low"
+                  name="low2"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Mode"
+                  name="mode2"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="High"
+                  name="high2"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Constant"
+                  name="constant2"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Mean"
+                  name="mean2"
+                  step="0.01"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Standard Dev"
+                  name="std2"
+                  step="0.01"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center mt-5">
+      <button
+        class="btn btn-outline-primary btn-lg"
+        type="button"
+        id="plusButton"
+        onclick="add_row()"
+      >
+        <i class="fa fa-plus"></i> Row
+      </button>
+      <button
+        class="btn btn-outline-danger btn-lg"
+        id="remove"
+        type="button"
+        onclick="delete_row()"
+      >
+        <i class="fa fa-minus"></i> Row
+      </button>
+
+      <button class="btn btn-outline-success btn-lg" name="action" value="next">
+        Next
+      </button>
+    </div>
+
+    <br /><br />
+  </div>
+</form>
+
+{% endblock %} {%block Script%}
+<script>
+  document.getElementById("remove").style.display = "none";
+
+  function delete_row() {
+    $("tr").last().remove();
+    if (
+      document.querySelectorAll("tr").length - 1 > 2 &&
+      document.querySelectorAll("tr").length - 1 <= 20
+    ) {
+      document.getElementById("remove").style.display = "initial";
+      document.getElementById("plusButton").style.display = "initial";
+      row--;
+    } else {
+      document.getElementById("remove").style.display = "none";
+    }
+  }
+  var name_count = 3;
+
+  var row = 2;
+
+  function add_row() {
+    if (row >= 2 && row <= 20) {
+      document.getElementById("remove").style.display = "initial";
+
+      $("tbody").append(
+        `<tr>
+              <td scope="row">  <div class="form-group">
+                  
+          <select class="form-control p-0" name="field` +
+          name_count +
+          `" required>
+            <option value="Loss Event Frequency">
+              Loss Event Frequency
+            </option>
+            <option value="Threat Event Frequency">
+              Threat Event Frequency
+            </option>
+            <option value="Contact Frequency">Contact Frequency</option>
+            <option value="Probability of Action">
+              Probability of Action
+            </option>
+            <option value="Vulnerability">Vulnerability</option>
+            <option value="Control Strength">Control Strength</option>
+            <option value="Threat Capability">Threat Capability</option>
+            <option value="Loss Magnitude">Loss Magnitude</option>
+            <option value="Primary Loss">Primary Loss</option>
+            <option value="Secondary Loss">Secondary Loss</option>
+            <option value="Secondary Loss Event Frequency">
+              Secondary Loss Event Frequency
+            </option>
+            <option value="Secondary Loss Event Magnitude">
+              Secondary Loss Event Magnitude
+            </option>
+          </select>
+                </div>
+              </td>
+              <td scope="row">  <div class="form-group">
+                <input type="number" class="form-control" placeholder="Gamma" name="gamma` +
+          name_count +
+          `" >
+              </div>
+            </td>
+            <td scope="row">  <div class="form-group">
+              <input type="number" class="form-control" placeholder="Low" name="low` +
+          name_count +
+          `">
+            </div>
+          </td>
+          <td scope="row">  <div class="form-group">
+            <input type="number" class="form-control" placeholder="Mode" name="mode` +
+          name_count +
+          `">
+          </div>
+        </td>
+        <td scope="row">  <div class="form-group">
+          <input type="number" class="form-control" placeholder="High" name="high` +
+          name_count +
+          `">
+        </div>
+      </td>
+      <td scope="row">  <div class="form-group">
+        <input type="number" class="form-control" placeholder="Constant" name="constant` +
+          name_count +
+          `">
+      </div>
+    </td>
+    <td scope="row">  <div class="form-group">
+      <input type="number" class="form-control" placeholder="Mean" step="0.01" name="mean` +
+          name_count +
+          `" >
+    </div>
+  </td>
+  <td scope="row">  <div class="form-group">
+    <input type="number" class="form-control" step="0.01" placeholder="Standar Dev" name="std` +
+          name_count +
+          `" >
+  </div>
+</td>
+            </tr>
+  `
+      );
+      name_count++;
+
+      row++;
+    } else {
+      document.getElementById("plusButton").style.display = "none";
+    }
+  }
+
+  function auto_add_rows(val) {
+    var x = val.value;
+    console.log(x);
+    var y = document.getElementById("exampleFormControlSelect1").value;
+    var lenRows = document.querySelectorAll("tr").length;
+    console.log(lenRows - 1);
+    if (x >= 2 && x <= 20) {
+      if (x > lenRows - 1) {
+        for (i = 0; i < x - (lenRows - 1); i++) {
+          add_row();
+        }
+      }
+      if (x < lenRows - 1) {
+        for (i = 0; i < lenRows - 1 - x; i++) {
+          delete_row();
+          console.log("delete");
+        }
+      }
+    }
+  }
+
+  function change_select(val) {
+    console.log(val.value);
+    $("#number").attr("name", val.value);
+  }
+
+  function unrequired_fileds() {
+    var table = document.getElementById("tbody");
+    var input = table.getElementsByTagName("input");
+    for (var z = 0; z < input.length; z++) {
+      input[z].required = false;
+    }
+  }
+</script>
+
+{%endblock%}

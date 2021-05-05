@@ -1,0 +1,65 @@
+{% extends "default.html" %} {% block title%}Login{% endblock %} {% block
+content %}
+
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <form
+        class="login100-form validate-form p-l-55 p-r-55 p-t-178"
+        method="POST"
+        action="/login"
+      >
+        <span class="login100-form-title"> Log In </span>
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %}
+        <div
+          class="alert alert-{{ category }} alert-dismissible fade show"
+          role="alert"
+        >
+          <span>{{ message }}</span>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <div
+          class="wrap-input100 validate-input m-b-16"
+          data-validate="Please enter email"
+        >
+          <input
+            class="input100"
+            type="email"
+            name="Email"
+            placeholder="Email"
+            required
+          />
+          <span class="focus-input100"></span>
+        </div>
+
+        <div
+          class="wrap-input100 validate-input m-b-23"
+          data-validate="Please enter password"
+        >
+          <input
+            class="input100"
+            type="password"
+            name="Password"
+            placeholder="Password"
+            required
+          />
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit">Log in</button>
+        </div>
+
+        <div class="flex-col-c p-t-100 p-b-40">
+          <span class="txt1 p-b-9"> Don’t have an account? </span>
+
+          <a href="/registration" class="txt3"> Register now </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
